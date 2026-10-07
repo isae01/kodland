@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+  <!-- Define el idioma de la página (Ruso) -->
+  <head>
+    <!-- Metadatos esenciales para caracteres y visualización móvil -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop It!</title>
+
+    <!-- Enlace a los estilos CSS personalizados -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Conexiones previas y descarga de la tipografía oficial (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Encabezado / Barra de Navegación Superior -->
+    <header class="header">
+      <div class="header__container">
+        <!-- Nombre de la marca o logotipo -->
+        <a href="#" class="header__logo">НЕ_ПУПЫРКА.РУ</a>
+
+        <!-- Botón hamburguesa (oculto en PC, visible en celular mediante CSS) -->
+        <button class="header__menu" id="menu-button">☰</button>
+
+        <!-- Bloque de navegación con ID para interactuar con JavaScript -->
+        <nav class="header__nav" id="menu">
+          <a href="#about" class="header__link">О НАС</a>
+          <a href="#products" class="header__link">СКИДКИ</a>
+          <a href="#contacts" class="header__link">КОНТАКТЫ</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Cuerpo principal de la página (Contenido único) -->
+    <main>
+      <!-- Sección 1: Hero (Presentación visual e impacto) -->
+      <section class="hero">
+        <div class="hero__container">
+          <!-- Columna izquierda: Textos de gancho y llamada a la acción -->
+          <div class="hero__content">
+            <h1 class="hero__title">POP IT!</h1>
+            <p class="hero__text">
+              Лучшая игрушка-антистресс - бесконечная пупырчатая пленка!
+            </p>
+            <a href="#products" class="hero__button">КУПИТЬ</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 2: ¿Qué es Pop It? (Bloque Informativo) -->
+      <section class="about" id="about">
+        <div class="about__container">
+          <h2 class="about__title">Что такое Pop it?</h2>
+          <p class="about__text">
+            Pop it дословно переводится как «лопни это». Это детская игра,
+            процесс в которой можно сравнить с лопанием воздушно-пузырчатой
+            упаковочной пленки. Но в отличии от пленки поп-иты можно давить с
+            характерными ощущениями и звуками «беснонечно»: десятки силиконовых
+            пузырей просто выдавливаются в другую сторону.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección 3: Galería de Productos (Catálogo) -->
+      <section class="products" id="products">
+        <div class="products__container">
+          <h2 class="products__title">Выбери свой Pop-It!</h2>
+
+          <!-- Contenedor flexible que agrupa los productos -->
+          <div class="products__list">
+            <!-- Tarjeta de Producto 1 (Independiente con 'article') -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="img/square.png"
+                  alt="Разноцветный квадратный"
+                  class="product-card__image"
+                />
+              </div>
+              <h3 class="product-card__title">Разноцветный квадратный</h3>
+              <button class="product-card__button">купить</button>
+            </article>
+
+            <!-- Tarjeta de Producto 2 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="img/amongus.png"
+                  alt="Among Us, мраморный"
+                  class="product-card__image"
+                />
+              </div>
+              <h3 class="product-card__title">Among Us, мраморный</h3>
+              <button class="product-card__button">купить</button>
+            </article>
+
+            <!-- Tarjeta de Producto 3 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="img/round.png"
+                  alt="Разноцветный круглый"
+                  class="product-card__image"
+                />
+              </div>
+              <h3 class="product-card__title">Разноцветный круглый</h3>
+              <button class="product-card__button">купить</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 4: Reglas del Juego -->
+      <section class="rules">
+        <div class="rules__container">
+          <!-- Datos y texto explicativo del juego -->
+          <div class="rules__content">
+            <h2 class="rules__title">Правила игры</h2>
+            <p class="rules__text">
+              Игроки ходят по очереди и нажимают на пупырки. Нужно обязательно
+              заканчивать ряд который начали. Нажимать можно максимум на 3
+              пупырки одновременно (обязательно должны быть рядом, нельзя
+              нажимать сразу несколько групп, если они не находятся впритык)
+              Задача сделать так, чтобы соперник ходил последним. Кто ходил
+              последним - тот проиграл!
+            </p>
+          </div>
+          <!-- Imagen de apoyo visual sobre las reglas -->
+          <div class="rules__image">
+            <img src="img/photo.jpg" alt="Правила игры" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página / Footer (Créditos y enlaces secundarios) -->
+    <footer class="footer" id="contacts">
+      <div class="footer__container">
+        <p class="footer__logo">НЕ_ПУПЫРКА.РУ</p>
+        <nav class="footer__nav">
+          <a href="#" class="footer__link">Способы оплаты</a>
+          <a href="#" class="footer__link">Доставка</a>
+          <a href="#" class="footer__link">Опт</a>
+          <a href="#" class="footer__link">Контакты</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Carga del archivo JavaScript-->
+    <script src="js/script.js"></script>
+  </body>
+</html>
