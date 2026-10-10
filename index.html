@@ -1,16 +1,12 @@
 <!doctype html>
 <html lang="ru">
-  <!-- Define el idioma de la página (Ruso) -->
   <head>
-    <!-- Metadatos esenciales para caracteres y visualización móvil -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pop It!</title>
-
-    <!-- Enlace a los estilos CSS personalizados -->
+    <!-- Enlace a los estilos -->
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Conexiones previas y descarga de la tipografía oficial (Montserrat) -->
+    <!-- Fuente Montserrat de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,17 +15,23 @@
     />
   </head>
   <body>
-    <!-- Encabezado / Barra de Navegación Superior -->
+    <!-- Encabezado / Navbar -->
     <header class="header">
       <div class="header__container">
-        <!-- Nombre de la marca o logotipo -->
         <a href="#" class="header__logo">НЕ_ПУПЫРКА.РУ</a>
 
-        <!-- Botón hamburguesa (oculto en PC, visible en celular mediante CSS) -->
-        <button class="header__menu" id="menu-button">☰</button>
+        <!-- CORREGIDO: Se agregaron atributos ARIA de accesibilidad para el menú interactivo -->
+        <button
+          class="header__menu"
+          id="menu-button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          ☰
+        </button>
 
-        <!-- Bloque de navegación con ID para interactuar con JavaScript -->
-        <nav class="header__nav" id="menu">
+        <nav class="header__nav" id="menu" aria-label="Главная навигация">
           <a href="#about" class="header__link">О НАС</a>
           <a href="#products" class="header__link">СКИДКИ</a>
           <a href="#contacts" class="header__link">КОНТАКТЫ</a>
@@ -37,12 +39,10 @@
       </div>
     </header>
 
-    <!-- Cuerpo principal de la página (Contenido único) -->
     <main>
-      <!-- Sección 1: Hero (Presentación visual e impacto) -->
+      <!-- Sección 1: Hero (Banner Principal) -->
       <section class="hero">
         <div class="hero__container">
-          <!-- Columna izquierda: Textos de gancho y llamada a la acción -->
           <div class="hero__content">
             <h1 class="hero__title">POP IT!</h1>
             <p class="hero__text">
@@ -50,10 +50,16 @@
             </p>
             <a href="#products" class="hero__button">КУПИТЬ</a>
           </div>
+          <div class="hero__image">
+            <img
+              src="img/background.png"
+              alt="Разноцветный поп-ит в форме мороженого"
+            />
+          </div>
         </div>
       </section>
 
-      <!-- Sección 2: ¿Qué es Pop It? (Bloque Informativo) -->
+      <!-- Sección 2: ¿Qué es Pop It? -->
       <section class="about" id="about">
         <div class="about__container">
           <h2 class="about__title">Что такое Pop it?</h2>
@@ -67,19 +73,17 @@
         </div>
       </section>
 
-      <!-- Sección 3: Galería de Productos (Catálogo) -->
+      <!-- Sección 3: Galería de Productos -->
       <section class="products" id="products">
         <div class="products__container">
           <h2 class="products__title">Выбери свой Pop-It!</h2>
-
-          <!-- Contenedor flexible que agrupa los productos -->
           <div class="products__list">
-            <!-- Tarjeta de Producto 1 (Independiente con 'article') -->
+            <!-- Tarjeta 1 -->
             <article class="product-card">
               <div class="product-card__image-wrapper">
                 <img
                   src="img/square.png"
-                  alt="Разноцветный квадратный"
+                  alt="Разноцветный квадратный поп-ит"
                   class="product-card__image"
                 />
               </div>
@@ -87,12 +91,12 @@
               <button class="product-card__button">купить</button>
             </article>
 
-            <!-- Tarjeta de Producto 2 -->
+            <!-- Tarjeta 2 -->
             <article class="product-card">
               <div class="product-card__image-wrapper">
                 <img
                   src="img/amongus.png"
-                  alt="Among Us, мраморный"
+                  alt="Поп-ит в форме персонажа Among Us"
                   class="product-card__image"
                 />
               </div>
@@ -100,12 +104,12 @@
               <button class="product-card__button">купить</button>
             </article>
 
-            <!-- Tarjeta de Producto 3 -->
+            <!-- Tarjeta 3 -->
             <article class="product-card">
               <div class="product-card__image-wrapper">
                 <img
                   src="img/round.png"
-                  alt="Разноцветный круглый"
+                  alt="Разноцветный круглый поп-ит"
                   class="product-card__image"
                 />
               </div>
@@ -119,7 +123,6 @@
       <!-- Sección 4: Reglas del Juego -->
       <section class="rules">
         <div class="rules__container">
-          <!-- Datos y texto explicativo del juego -->
           <div class="rules__content">
             <h2 class="rules__title">Правила игры</h2>
             <p class="rules__text">
@@ -131,15 +134,14 @@
               последним - тот проиграл!
             </p>
           </div>
-          <!-- Imagen de apoyo visual sobre las reglas -->
           <div class="rules__image">
-            <img src="img/photo.jpg" alt="Правила игры" />
+            <img src="img/photo.jpg" alt="Дети играют в поп-ит" />
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Pie de página / Footer (Créditos y enlaces secundarios) -->
+    <!-- Pie de página / Footer -->
     <footer class="footer" id="contacts">
       <div class="footer__container">
         <p class="footer__logo">НЕ_ПУПЫРКА.РУ</p>
@@ -152,7 +154,6 @@
       </div>
     </footer>
 
-    <!-- Carga del archivo JavaScript-->
     <script src="js/script.js"></script>
   </body>
 </html>

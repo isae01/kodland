@@ -1,5 +1,6 @@
-/* Configuración general */
-
+/* 
+   1. RESET Y CONFIGURACIÓN GENERAL (CORREGIDO: Cambie guion por asterisco *)
+    */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +12,9 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: #111;
+  /* CORREGIDO: Aplique la tipografía oficial Montserrat importada del HTML */
+  font-family: "Montserrat", sans-serif;
+  color: #111111;
   background-color: white;
 }
 
@@ -26,10 +28,11 @@ a {
   text-decoration: none;
 }
 
-/* Header */
-
+/* 
+   2. HEADER (CORREGIDO: Ajustada nomenclatura BEM de heared a header)
+    */
 .header {
-  background-color: #ffc266;
+  background-color: #ffbd66;
   padding: 25px 0;
 }
 
@@ -37,7 +40,6 @@ a {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,48 +72,46 @@ a {
   cursor: pointer;
 }
 
-/* Hero */
+/* HERO: banner principal */
 
 .hero {
-  background-color: #ffc266;
-  padding: 50px 0 130px;
-
-  background-image: url("../img/background.png");
-  background-position: 75% center;
-  padding: 50px 0 130px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color: #ffbd66;
+  padding: 40px 0 60px;
+  overflow: hidden;
 }
 
 .hero__container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0;
+  margin-top: 0;
 }
 
 .hero__content {
-  width: 50%;
+  flex: 0 0 45%;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
 }
-
 .hero__title {
-  color: white;
-  font-size: 100px;
-  line-height: 0.9;
+  color: #fff;
+  font-size: clamp(56px, 8vw, 100px);
+  line-height: 0.95;
   font-weight: 900;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .hero__text {
-  max-width: 500px;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 40px;
+  max-width: 480px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
 }
 
 .hero__button {
@@ -119,7 +119,9 @@ a {
   background-color: #c8f2f0;
   padding: 18px 55px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.2s;
 }
 
 .hero__button:hover {
@@ -127,21 +129,82 @@ a {
 }
 
 .hero__image {
-  width: 45%;
+  flex: 0 0 50%;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: -250px;
+  z-index: 1;
 }
 
 .hero__image img {
+  display: block;
   width: 100%;
-  max-width: 380px;
+  max-width: 520px;
   height: auto;
   object-fit: contain;
+  transform: scale(1.35);
 }
 
-/* About */
+/* TABLETS Y CELULARES */
 
+@media (max-width: 768px) {
+  .hero {
+    padding: 35px 0 45px;
+  }
+
+  .hero__container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .hero__content {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(48px, 10vw, 70px);
+  }
+
+  .hero__text {
+    margin: 0 auto 25px;
+    font-size: 17px;
+  }
+
+  .hero__image {
+    width: 100%;
+    flex: none;
+    left: 0;
+  }
+
+  .hero__image img {
+    width: 90%;
+    max-width: 340px;
+    transform: scale(1.35);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 48px;
+  }
+
+  .hero__text {
+    font-size: 16px;
+  }
+
+  .hero__button {
+    padding: 15px 40px;
+  }
+}
+
+/* 
+   4. ABOUT SECTION
+    */
 .about {
   background-color: white;
   padding: 75px 20px;
@@ -156,6 +219,7 @@ a {
 .about__title {
   font-size: 26px;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .about__text {
@@ -166,12 +230,12 @@ a {
   margin: 0 auto;
 }
 
-/* Productos */
-
+/* 
+   5. PRODUCTS SECTION
+    */
 .products {
   padding: 80px 20px;
   background-color: #e4f9fc;
-  background-image: none;
 }
 
 .products__container {
@@ -233,7 +297,9 @@ a {
   transform: translateY(-1px);
 }
 
-/* Reglas */
+/* 
+   6. RULES SECTION
+    */
 .rules {
   padding: 80px 20px;
   background-color: #ffffff;
@@ -281,11 +347,11 @@ a {
 
 .rules__image img {
   width: 100%;
-  border-radius: 0;
 }
 
-/* Footer */
-
+/* 
+   7. FOOTER SECTION
+    */
 .footer {
   background-color: #333333;
   color: white;
@@ -296,7 +362,6 @@ a {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -328,97 +393,64 @@ a {
   opacity: 0.9;
 }
 
-/* Responsive */
-
+/* 
+   8. RESPONSIVE DESIGN (DISEÑO MÓVIL)
+    */
 @media (max-width: 768px) {
   .header {
     position: relative;
   }
-
   .header__menu {
     display: block;
   }
 
   .header__nav {
     display: none;
-
     position: absolute;
     top: 70px;
     right: 5%;
-
     background-color: white;
     padding: 20px;
-
     flex-direction: column;
     gap: 20px;
-
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
     z-index: 10;
   }
 
-  /* Esta clase la agrega JavaScript */
   .header__nav--active {
     display: flex;
   }
 
-  /* Hero en celular */
-
-  .hero__container {
+  .hero__container,
+  .rules__container,
+  .footer__container {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero__content {
+  .hero__content,
+  .hero__image,
+  .rules__content,
+  .rules__image {
     width: 100%;
   }
 
   .hero__title {
     font-size: 65px;
+    white-space: normal;
   }
-
-  .hero__text {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero__image {
-    width: 100%;
-    margin-top: 45px;
-  }
-
-  .hero__image img {
-    width: 280px;
-  }
-
-  /* Productos en una columna */
 
   .products__list {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  /* Reglas en una columna */
-
-  .rules__container {
     flex-direction: column;
+    gap: 40px;
+    align-items: center;
   }
 
-  .rules__content {
-    width: 100%;
-    border-radius: 30px;
-  }
-
-  .rules__image {
-    width: 100%;
-  }
-
-  /* Footer */
-
-  .footer__container {
+  .footer__nav {
     flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    gap: 15px;
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
 
@@ -426,21 +458,17 @@ a {
   .hero__title {
     font-size: 50px;
   }
-
   .hero__text {
     font-size: 17px;
   }
-
   .hero__button {
     padding: 15px 40px;
   }
-
   .about__title,
   .products__title,
   .rules__title {
     font-size: 22px;
   }
-
   .rules__content {
     padding: 30px 25px;
   }
